@@ -15,6 +15,7 @@
 
 html, body {
 
+  user-select: none;
   margin: 10px;
   padding: 0;
   font-family: defaultFont;
@@ -52,6 +53,7 @@ noscript {
   font-size: 50px;
   margin: 20px;
   text-align: left;
+  pointer-events: none;
 
 }
 
@@ -65,6 +67,13 @@ noscript {
 #add_connection {
 
   right: 140px;
+  bottom: 20px;
+
+}
+
+#start_walk {
+
+  right: 310px;
   bottom: 20px;
 
 }
@@ -92,6 +101,7 @@ noscript {
 .action_button:hover { box-shadow: inset 200px 0 0 0 var(--accent-1); }
 
 .node {
+  z-index: 100;
   width: 20px;
   height: 20px;
   background-color: rgb(81, 211, 223);
@@ -104,10 +114,39 @@ noscript {
 }
 
 .line {
-  z-index: -1;
+  z-index: 99;
   height: 5px;
   background-color: rgb(255, 255, 255);
   position: absolute;
   transform-origin: 0 50%;
   pointer-events: none; /* Ensure the line doesn't interfere with mouse events */
+}
+
+#bar-graph {
+  position: absolute;
+  bottom: 20px; /* Distance from the bottom */
+  left: 20px; /* Distance from the left */
+  display: flex; /* Ensure bars are displayed in a row */
+  flex-wrap: nowrap; /* Prevent wrapping */
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
+  white-space: nowrap; /* Prevent wrapping of bars */
+}
+
+
+#slider-container {
+  position: fixed;
+  right: -210px;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-color: #151515;
+}
+
+#slider-container input[type="range"] {
+  writing-mode: bt-rl; /* Vertical slider */
+  height: 300px;
+  transform: rotate(180deg); /* Rotate slider for vertical orientation */
+  accent-color: rgb(81, 211, 223);
+
 }

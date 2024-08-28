@@ -13,10 +13,10 @@ window.addEventListener("resize", function (ignored) {
 }, true);
 
 // site
-var title = "(MC)²";
-var version = "version 1.0.0";
+var title = "metropolis-hastings visualization";
+var version = "version 1.0.1";
 
-window.onload = function () { document.title = title; document.getElementById("title").innerHTML = title + "  <span style=\"font-size: 30px;\"> " + version + "<\span>"; }
+window.onload = function () { document.getElementById("title").innerHTML = title + "  <span style=\"font-size: 30px;\"> " + version + "<\span>"; }
 
 function createCornerButton (buttonText, func) {
 
